@@ -233,6 +233,13 @@
 
 <script>
   const PASSWORD = 'pizzaiseternal';
+  const HINTS = [
+    "Did you just guess 'password'?",
+    "Nice try, hacker.",
+    "You shall not pass.",
+    "That ain't it.",
+    "Lol no."
+  ];
   const pw      = document.getElementById('pw');
   const display = document.getElementById('display');
   const card    = document.getElementById('card');
@@ -258,6 +265,7 @@
       card.classList.remove('shake');
       void card.offsetWidth;
       card.classList.add('shake');
+      hint.textContent = HINTS[Math.floor(Math.random() * HINTS.length)];
       hint.classList.add('visible');
       pw.value = '';
       updateDisplay();
